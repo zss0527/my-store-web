@@ -17,6 +17,14 @@
     <span>{{_obj | json}}</span>
     <br />
     <span>{{title | reverse}}</span>
+    <br />
+    <input type="checkbox" checked="{{isDisabled}}" />
+    <input type="checkbox" [checked]="isDisabled">
+    <br />
+    <input (keyup)="updatetitle($event)">
+    <input [(ngModel)]=title>
+    <br />
+    <button (click)="changetitle()">click</button>
   </mat-card-content>
 
 
