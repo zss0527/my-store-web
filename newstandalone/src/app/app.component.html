@@ -1,37 +1,19 @@
-<mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title> {{title | lowercase | uppercase }}</mat-card-title>
-    <mat-card-subtitle>{{subtitle | lowercase}}</mat-card-subtitle>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Angular 18 Full Course</span>
+  <span class="example-spacer"></span>
+  <button routerLink="" mat-button>Home</button>
+  <button routerLink="about" mat-button>About</button>
+  <button routerLink="contact" mat-button>Contact</button>
 
-  </mat-card-header>
-  <mat-card-content>
-    <app-home></app-home>
-    <span>{{todaydate | date:'dd/MMM/yy'}}</span>
-    <br />
-    <span>{{salary | currency:'EUR'}}</span>
-    <br />
-    <span>{{salary | number:'1.2-3'}}</span>
-    <br />
-    <span>{{salary/100 | percent}}</span>
-    <br />
-    <span>{{_obj | json}}</span>
-    <br />
-    <span>{{title | reverse}}</span>
-    <br />
-    <input type="checkbox" checked="{{isDisabled}}" />
-    <input type="checkbox" [checked]="isDisabled">
-    <br />
-    <input (keyup)="updatetitle($event)">
-    <input [(ngModel)]=title>
-    <br />
-    <button (click)="changetitle()">click</button>
-  </mat-card-content>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
 
-
-
-
-  <mat-card-actions>
-  </mat-card-actions>
-</mat-card>
-<br>
 <router-outlet />
