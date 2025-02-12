@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, HomeComponent, CommonModule, ReversePipe, FormsModule],
+  imports: [MatCardModule, MatButtonModule, CommonModule, ReversePipe, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
