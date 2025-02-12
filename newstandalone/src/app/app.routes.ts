@@ -24,7 +24,8 @@ export const routes: Routes = [
     },
     {
         path: 'contact',
-        component: ContactComponent
+        // component: ContactComponent
+        loadComponent: () => import('./common/contact/contact.component').then(m => m.ContactComponent)
     },
     {
         path: 'customer',
