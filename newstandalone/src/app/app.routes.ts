@@ -8,6 +8,7 @@ import { StatusComponent } from './common/status/status.component';
 import { authGuard } from './Guard/auth.guard';
 import { childauthGuard } from './Guard/childauth.guard';
 import { authdGuard } from './Guard/authd.guard';
+import { LoginComponent } from './common/login/login.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     {
         path: 'about/:submenu/:id',
         component: AboutComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: 'contact',

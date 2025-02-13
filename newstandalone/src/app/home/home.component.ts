@@ -22,8 +22,25 @@ export class HomeComponent {
     "name": "INT"
   }
 
+  _class = 'active'
+  _color = 'blue'
+  _font = '24'
+
+  isShow = true
+
+  tickerinfo = [
+    { 'id': 1, 'name': 'angular', color: 'green' },
+    { 'id': 2, 'name': 'react', color: 'yellow' },
+    { 'id': 3, 'name': 'vue', color: 'blue' },
+    { 'id': 4, 'name': 'flutter', color: 'pink' },
+  ]
+
+  _view = 'home'
+
   changetitle() {
     this.title = 'Agular 18 Full Tutorial'
+    this.isDisabled = !this.isDisabled
+    this.isShow = !this.isShow
   }
 
   updatetitle(event: any) {

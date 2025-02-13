@@ -24,6 +24,32 @@
         <input [(ngModel)]=title>
         <br />
         <button (click)="changetitle()">click</button>
+        <!-- <div [ngClass]="_class"> -->
+        <div [ngClass]="{'active':isDisabled}">
+            <h2>Attribute Directive</h2>
+        </div>
+
+        <div *ngIf="isShow">
+            <h2 [ngStyle]="{'color':_color,'font-size':_font}">Attribute Directive</h2>
+        </div>
+        <ol>
+            <li *ngFor="let item of tickerinfo" [ngStyle]="{'color':item.color}">{{item | json}}</li>
+        </ol>
+        <input [(ngModel)]="_view">
+        <div [ngSwitch]="_view">
+            <div *ngSwitchCase="'home'">
+                <h2>this is home view</h2>
+            </div>
+            <div *ngSwitchCase="'about'">
+                <h2>this is aobut view</h2>
+            </div>
+            <div *ngSwitchCase="'contact'">
+                <h2>this is contact view</h2>
+            </div>
+            <div *ngSwitchDefault>
+                <h2>this is default view</h2>
+            </div>
+        </div>
     </mat-card-content>
 
 
