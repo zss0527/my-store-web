@@ -9,6 +9,7 @@ import { ProductService } from '../../service/product.service';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { Product } from '../../model/product.model';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addproduct',
@@ -29,6 +30,7 @@ export class AddproductComponent implements OnInit {
   productService = inject(ProductService)
   formBuilder = inject(FormBuilder)
   ref = inject(MatDialogRef<AddproductComponent>)
+  toastr = inject(ToastrService)
   _dialogdata: any
   _productinfo: any
   // productForm!: FormGroup
@@ -44,7 +46,6 @@ export class AddproductComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
   ngOnInit(): void {
     this._dialogdata = this.data
-    console.log("_dialogdata:", this._dialogdata)
     if (this._dialogdata.id !== 0) {
       this.productService.getProductById(this._dialogdata.id).subscribe({
         next: (item) => {
@@ -84,7 +85,7 @@ export class AddproductComponent implements OnInit {
         console.log('data:', data)
         this.productService.updateProduct(data).subscribe({
           next: (item) => {
-            alert('product updated successfully!')
+            this.toastr.success('product updated successfully!', 'Success')
             this.productForm.reset()
             this.cancelpopup()
           },
@@ -95,7 +96,7 @@ export class AddproductComponent implements OnInit {
       } else {
         this.productService.createProduct(data).subscribe({
           next: (item) => {
-            alert('product created successfully!')
+            this.toastr.success('product created successfully!', 'Success')
             this.productForm.reset()
             this.cancelpopup()
           },

@@ -55,6 +55,13 @@
       "description": "one java book",
       "price": "116",
       "status": true
+    },
+    {
+      "id": "3",
+      "name": "effective java",
+      "description": "one java book",
+      "price": "115",
+      "status": true
     }
   ]
 }
