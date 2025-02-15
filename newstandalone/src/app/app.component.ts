@@ -1,13 +1,12 @@
 import { Component, ChangeDetectionStrategy, } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterOutlet } from '@angular/router';
+import { AppmenuComponent } from './common/appmenu/appmenu.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule],
+  imports: [RouterOutlet, AppmenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush

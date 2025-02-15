@@ -1,0 +1,30 @@
+.mat-mdc-card {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+}
+
+.mat-mdc-card-actions {
+    justify-content: center;
+}
+
+.mdc-button {
+    padding: 0 5px;
+    margin: 0 10px
+}
+
+.example-section {
+    margin: 12px 0;
+}
+
+/* .example-margin {
+    margin: 0 12px;
+} */
+
+/* .mat-mdc-radio-button~.mat-mdc-radio-button {
+    margin-left: 16px;
+} */

@@ -9,28 +9,44 @@ import { authGuard } from './Guard/auth.guard';
 import { childauthGuard } from './Guard/childauth.guard';
 import { authdGuard } from './Guard/authd.guard';
 import { LoginComponent } from './common/login/login.component';
+import { RegisterComponent } from './common/register/register.component';
+import { ProductComponent } from './common/product/product.component';
 
+//路由配置中path不能以/开头，但是redirectTo必须以/开头
 export const routes: Routes = [
-    {
-        path: '',
-        component: HomeComponent
-    },
-    {
-        path: 'about',
-        component: AboutComponent
-    },
-    {
-        path: 'about/:submenu/:id',
-        component: AboutComponent
-    },
     {
         path: 'login',
         component: LoginComponent
     },
     {
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [authGuard],
+    },
+    {
+        path: 'about',
+        component: AboutComponent,
+        canActivate: [authGuard],
+    },
+    {
+        path: 'about/:submenu/:id',
+        component: AboutComponent,
+        canActivate: [authGuard],
+    },
+    {
         path: 'contact',
         // component: ContactComponent
-        loadComponent: () => import('./common/contact/contact.component').then(m => m.ContactComponent)
+        loadComponent: () => import('./common/contact/contact.component').then(m => m.ContactComponent),
+        canActivate: [authGuard],
+    },
+    {
+        path: '',
+        redirectTo: '/login',
+        pathMatch: 'full'
     },
     {
         path: 'customer',
@@ -48,6 +64,11 @@ export const routes: Routes = [
                 component: AddComponent
             }
         ]
+    },
+    {
+        path: 'product',
+        component: ProductComponent,
+        canActivate: [authGuard]
     },
     {
         path: '**',

@@ -1,29 +1,60 @@
 {
-    "posts": [
-        {
-            "id": "1",
-            "title": "a title",
-            "views": 100
-        },
-        {
-            "id": "2",
-            "title": "another title",
-            "views": 200
-        }
-    ],
-    "comments": [
-        {
-            "id": "1",
-            "text": "a comment about post 1",
-            "postId": "1"
-        },
-        {
-            "id": "2",
-            "text": "another comment about post 1",
-            "postId": "1"
-        }
-    ],
-    "profile": {
-        "name": "typicode"
+  "user": [
+    {
+      "id": "admin",
+      "title": "admin user",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "suser",
+      "title": "Sales user",
+      "password": "test",
+      "role": "salesman"
+    },
+    {
+      "id": "larry",
+      "password": "123",
+      "role": "m",
+      "username": "larry",
+      "gender": "m"
+    },
+    {
+      "id": "larry",
+      "password": "123",
+      "role": "o",
+      "username": "larry",
+      "gender": "o"
+    },
+    {
+      "id": "larry",
+      "password": "123",
+      "role": "m",
+      "username": "larry",
+      "gender": "m"
     }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "name": "The C Programming Language",
+      "description": "this is a book about c language",
+      "price": "145",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "c primer plus",
+      "description": "one c book",
+      "price": "100",
+      "status": true
+    },
+    {
+      "id": "2",
+      "name": "thinking in java",
+      "description": "one java book",
+      "price": "116",
+      "status": true
+    }
+  ]
 }
