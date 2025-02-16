@@ -1,6 +1,13 @@
 <p>about works!</p>
 submenu: {{submenu}}<br />
 id: {{routevalue}}<br />
+<ol>
+    @for (country of countries; track $index) {
+    <li [ngClass]="{'redclass':$even,'blueclass':$odd}">{{country}}</li>
+    count: {{$count}} index: {{$index}} first: {{$first}} last:{{$last}} even: {{$even}} odd: {{$odd}}
+    }
+</ol>
+
 <div>
     <app-counterbtn></app-counterbtn>
     <app-counterdisplay></app-counterdisplay>

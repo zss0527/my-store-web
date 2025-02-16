@@ -6,7 +6,20 @@
     <li>{{item.id}}: {{item.name}}</li>
     }
 </ul>
-<h2>we have {{totalPlayers()}} players</h2>
 
-<h2>we have {{totalPlayers$ | async }} players</h2>
-<h2>we have {{_signalCount()}} players</h2>
+
+<div>
+    @if(totalPlayers() == 0) {
+    <span>NO users</span>
+    }
+    @else if(totalPlayers() === 1){
+    <h3>we have {{_signalCount()}} players</h3>
+    }
+    @else if(totalPlayers() === 2) {
+    <h2>we have {{totalPlayers$ | async }} players</h2>
+    }
+    @else {
+    <h1>we have {{totalPlayers()}} players</h1>
+    }
+
+</div>
