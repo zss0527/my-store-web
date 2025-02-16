@@ -3,3 +3,36 @@
 <button routerLink="/customer/edit/01" mat-button>Edit</button>
 <router-outlet />
 <input [(ngModel)]="userInput" />
+
+<br />
+<!-- <button (click)="isShow=!isShow">isShow</button> -->
+
+<img style="width: 200px;height: 200px;" #greeting alt="loading..."
+    src="https://bigimagesystems.com/wp-content/uploads/2024/10/dsc3066-min-jpg.webp" />
+@defer (on viewport(greeting)) {
+<div>
+    <h1>React</h1>
+</div>
+} @loading (after 500ms; minimum 1s) {
+<img alt="loading..." src="/assets/image.png" />
+} @placeholder (minimum 500ms){
+<p>Plcaceholder content</p>
+} @error {
+<p>Failed to load large component.</p>
+}
+
+
+@defer (on interaction) {
+<div>please interact with me!</div>
+} @placeholder {
+<div>Large component placeholder</div>
+}
+
+@defer {
+<img style="width: 200px;height: 200px;" #greeting alt="loading..."
+    src="https://bigimagesystems.com/wp-content/uploads/2024/10/dsc3066-min-jpg.webp" />
+} @loading (after 1000ms; minimum 1s){
+<div>loading...</div>
+} @placeholder {
+<div>placeholder content</div>
+}

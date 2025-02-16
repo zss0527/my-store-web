@@ -13,6 +13,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './customer.component.css'
 })
 export class CustomerComponent {
+  isShow = false
   userInput = ""
   cannavigate() {
     if (this.userInput !== '') {
