@@ -1,19 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { ReversePipe } from '../custom/reverse.pipe';
 import { FormsModule } from '@angular/forms';
+import { ChildComponent } from '../common/child/child.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, CommonModule, ReversePipe, FormsModule],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    CommonModule,
+    ReversePipe,
+    FormsModule,
+    ChildComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  toastr = inject(ToastrService)
   title = 'Agular 18 Tutorial';
   subtitle = 'Angular for begginers'
   todaydate = new Date()
@@ -22,11 +32,16 @@ export class HomeComponent {
     "name": "INT"
   }
 
+  @ViewChild(ChildComponent)
+  _child!: ChildComponent
+
   _class = 'active'
   _color = 'blue'
   _font = '24'
 
   isShow = true
+
+  firstname = ''
 
   tickerinfo = [
     { 'id': 1, 'name': 'angular', color: 'green' },
@@ -45,6 +60,15 @@ export class HomeComponent {
 
   updatetitle(event: any) {
     this.title = event.target.value
+  }
+
+  updatetitle1(title: string) {
+    this.title = title
+  }
+
+  addFruit(fruit: string) {
+    let res = this._child.updateFruits(fruit)
+    this.toastr.success(res, 'Success')
   }
 
   isDisabled = true

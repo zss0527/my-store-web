@@ -50,6 +50,18 @@
                 <h2>this is default view</h2>
             </div>
         </div>
+
+        <div>
+            <input [(ngModel)]="firstname">
+            <app-child [firstname]="firstname" lastname="zhu" [obj]="_obj"
+                (dataupdater)="updatetitle1($event)"></app-child>
+
+            <div>
+                <input placeholder="Fruit name" #fruit>
+                <button (click)="addFruit(fruit.value)">Add Fruit</button>
+            </div>
+        </div>
+
     </mat-card-content>
 
 

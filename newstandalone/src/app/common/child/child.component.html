@@ -1,0 +1,12 @@
+<h2>Wlecome: {{firstname}} {{lsname}}</h2>
+{{obj | json }}
+<br />
+
+<input #name>
+<br />
+<button (click)="dataupdater.emit(name.value)">Transfer data to parent</button>
+<ol>
+    @for (fruit of fruits; track $index) {
+    <li>{{fruit}}</li>
+    }
+</ol>
