@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CounterbtnComponent } from '../counterbtn/counterbtn.component';
+import { CounterdisplayComponent } from '../counterdisplay/counterdisplay.component';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [
+    CounterbtnComponent,
+    CounterdisplayComponent,
+  ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

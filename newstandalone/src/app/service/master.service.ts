@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { LoginModel, user } from '../model/Login.model';
 
 @Injectable({
@@ -7,6 +7,8 @@ import { LoginModel, user } from '../model/Login.model';
 })
 export class MasterService {
 
+  counterValue = signal<number>(0)
+  players = signal([{ id: 1, name: 'Sachin' }])
 
   constructor(
     private http: HttpClient
