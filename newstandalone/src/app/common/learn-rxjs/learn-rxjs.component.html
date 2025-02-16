@@ -1,0 +1,29 @@
+<button (click)="subscribeFn()">Observable Subscribe</button>
+<br />
+<div style="margin: 10px 0; display: flex;justify-content: space-around;">
+    <button (click)="subscribeTicket()">Creation Operators</button>
+    <button (click)="pipeableFn()">Join Creation Operators</button>
+    <button (click)="pipeableFn()">Transformation Operators</button>
+    <button (click)="pipeableFn()">Filtering Operators</button>
+    <button (click)="pipeableFn()">Multicastin Operators</button>
+    <button (click)="pipeableFn()">Error Handling Operators</button>
+    <button (click)="pipeableFn()">Utility Operators</button>
+    <button (click)="pipeableFn()">Conditional and Boolean Operators</button>
+    <button (click)="pipeableFn()">Mathematical and Aggregate Operators</button>
+    <button (click)="pipeableFn()">Pipeable Operators</button>
+</div>
+
+<div style="display: flex;justify-content: space-around;">
+    <button (click)="subjectFn()">Subject</button>
+    <button (click)="multicastObservableFn()">Multicasted Observables</button>
+    <button (click)="behaviorSubjectFn()">Behavior Subject</button>
+    <button (click)="replaySubjectFn()">Replay Subject</button>
+    <button (click)="asyncSubjectFn()">Async Subject</button>
+    <button (click)="voidSubjectFn()">Void Subject</button>
+</div>
+
+<ul>
+    @for (ticket of ticketInfo$ | async; track $index) {
+    <li>{{ticket.name}}</li>
+    }
+</ul>
