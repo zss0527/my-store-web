@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header style="background-color: blue">
+        <ng-content select=".header">
+            <h2>Default content</h2>
+        </ng-content>
+    </mat-card-header>
+
+    <mat-card-content>
+        <ng-content select="p">
+            <h2>Default content</h2>
+        </ng-content>
+    </mat-card-content>
+
+    <mat-card-footer style="background-color: grey">
+        <ng-content select=".footer">
+            <!-- default content  -->
+            <h2>Default content</h2>
+        </ng-content>
+    </mat-card-footer>
+</mat-card>

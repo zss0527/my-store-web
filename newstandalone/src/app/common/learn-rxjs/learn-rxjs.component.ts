@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Observable, of, map, filter, merge, range, concat, interval, take, skip, skipLast, find, every, delay, Subject, from, multicast, BehaviorSubject, ReplaySubject, AsyncSubject } from 'rxjs';
+import { ChildnewComponent } from "../childnew/childnew.component";
 
 @Component({
   selector: 'app-learn-rxjs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ChildnewComponent],
   templateUrl: './learn-rxjs.component.html',
   styleUrl: './learn-rxjs.component.css'
 })

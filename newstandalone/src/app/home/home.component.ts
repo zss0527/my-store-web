@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, signal, ViewChild } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -25,11 +25,20 @@ import { ToastrService } from 'ngx-toastr';
 export class HomeComponent {
   toastr = inject(ToastrService)
   title = 'Agular 18 Tutorial';
+  title1 = signal<string>('Agular 18 Tutorial')
   subtitle = 'Angular for begginers'
   todaydate = new Date()
   salary = 1000
   _obj = {
     "name": "INT"
+  }
+
+  constructor() {
+    setTimeout(() => {
+      this.title = "Zoneless test"
+      this.title1.set('Zoneless test')
+      console.log('this title: ', this.title)
+    }, 1000);
   }
 
   @ViewChild(ChildComponent)

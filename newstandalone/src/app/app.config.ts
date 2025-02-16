@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection, isDevMode } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, isDevMode, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -13,20 +13,21 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    // provideZoneChangeDetection({ eventCoalescing: true }),
+    provideExperimentalZonelessChangeDetection(),
     provideRouter(routes),
     provideAnimationsAsync(),
     provideHttpClient(withInterceptors([
-        tokenInterceptor,
+      tokenInterceptor,
     ])),
     provideAnimations(),
     provideToastr({
-        timeOut: 10000,
-        positionClass: 'toast-top-right',
-        preventDuplicates: true,
+      timeOut: 10000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
     }),
     provideStore(),
     provideEffects(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
-]
+  ]
 };
