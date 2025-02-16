@@ -11,7 +11,7 @@
     src="https://bigimagesystems.com/wp-content/uploads/2024/10/dsc3066-min-jpg.webp" />
 @defer (on viewport(greeting)) {
 <div>
-    <h1>React</h1>
+    <h1>Deferable Data</h1>
 </div>
 } @loading (after 500ms; minimum 1s) {
 <img alt="loading..." src="/assets/image.png" />
@@ -23,9 +23,14 @@
 
 
 @defer (on interaction) {
-<div>please interact with me!</div>
+<ol>
+    @for (item of fruits; track $index) {
+    <li>{{item}}</li>
+    }
+</ol>
+
 } @placeholder {
-<div>Large component placeholder</div>
+<h2>data will be available soon...</h2>
 }
 
 @defer {
@@ -35,4 +40,26 @@
 <div>loading...</div>
 } @placeholder {
 <div>placeholder content</div>
+}
+
+@defer (on timer(2000ms)) {
+<div>
+    <h1>appeared after 2000ms</h1>
+</div>
+} @placeholder {
+<div>
+    placeholder content
+</div>
+}
+
+<h2 style="border: 1px red solid;" #hoverItem>hover pls</h2>
+@defer (on hover(hoverItem)) {
+<h2>data after hover</h2>
+}
+
+<button (click)="isShow=!isShow">isShow</button>
+@defer (when isShow) {
+<h2>when isShow Data</h2>
+} @placeholder {
+<h2>when isShow placeholder</h2>
 }

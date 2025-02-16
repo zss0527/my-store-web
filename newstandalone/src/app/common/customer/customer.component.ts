@@ -15,6 +15,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class CustomerComponent {
   isShow = false
   userInput = ""
+  fruits = ['Apple', 'Banana', 'Orange']
   cannavigate() {
     if (this.userInput !== '') {
       if (confirm('if you navigating your data going to lost. do you want continue?')) {
