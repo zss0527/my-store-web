@@ -12,6 +12,7 @@ import { LoginComponent } from './common/login/login.component';
 import { RegisterComponent } from './common/register/register.component';
 import { ProductComponent } from './common/product/product.component';
 import { LearnRxjsComponent } from './common/learn-rxjs/learn-rxjs.component';
+import { NewproductComponent } from './common/newproduct/newproduct.component';
 
 //路由配置中path不能以/开头，但是redirectTo必须以/开头
 export const routes: Routes = [
@@ -74,6 +75,11 @@ export const routes: Routes = [
     {
         path: 'learnrxjs',
         component: LearnRxjsComponent,
+        canActivate: [authGuard]
+    },
+    {
+        path: 'productnew',
+        component: NewproductComponent,
         canActivate: [authGuard]
     },
     {
